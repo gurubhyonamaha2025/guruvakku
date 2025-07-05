@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>బుద్ధివేదం - శ్రీ సామవేదం శంముఖ శర్మ గారి ప్రవచనాలు</title>
+    <meta name="description" content="శ్రీ సామవేదం శంముఖ శర్మ గారి అమూల్యమైన ప్రవచనాలు మరియు జీవిత సూత్రాలు - Wisdom and life guidance from Sri Samavedam Shanmukha Sharma's spiritual discourses">
+    <meta property="og:title" content="బుద్ధివేదం - గురువర్య ప్రవచనాలు">
+    <meta property="og:description" content="శ్రీ సామవేదం శంముఖ శర్మ గారి అమృత వచనాలు - Spiritual wisdom and life guidance">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="keywords" content="Samavedam Shanmukha Sharma, Telugu spiritual quotes, pravachanalu, Buddhivedam, spiritual wisdom, Telugu philosophy">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #F4A460 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: repeating-linear-gradient(
+                90deg,
+                #8B4513 0px,
+                #D2691E 20px,
+                #8B4513 40px
+            );
+            background-image: 
+                radial-gradient(circle at 10px 25px, #FFD700 8px, transparent 8px),
+                radial-gradient(circle at 30px 25px, #FFD700 8px, transparent 8px);
+            background-size: 40px 50px;
+            border-bottom: 3px solid #FFD700;
+            z-index: 10;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            max-height: 120px;
+            width: auto;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+            background: rgba(139, 69, 19, 0.2);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        .header p {
+            color: #FFF8DC;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .quote-card {
+            background: linear-gradient(145deg, rgba(255, 248, 220, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 
+                0 20px 40px rgba(139, 69, 19, 0.2),
+                inset 0 1px 0 rgba(255, 215, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 25px 50px rgba(139, 69, 19, 0.3),
+                inset 0 1px 0 rgba(255, 215, 0, 0.3);
+        }
+
+        .quote-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            pointer-events: none;
+        }
+
+        .quote-text {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+            line-height: 1.4;
+            position: relative;
+        }
+
+        .telugu-text {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .english-text {
+            font-size: 1.4rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+
+        .quote-snippet {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .quote-snippet.collapsed::after {
+            content: '...';
+            color: #888;
+            font-weight: bold;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: linear-gradient(45deg, #8B4513, #D2691E);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .read-more-btn:hover {
+            background: linear-gradient(45deg, #D2691E, #8B4513);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
+        }
+
+        .quote-expanded {
+            animation: expandText 0.3s ease-out;
+        }
+
+        @keyframes expandText {
+            from {
+                opacity: 0.7;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .quote-meta {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .meta-item {
+            display: inline-block;
+            margin: 5px 15px 5px 0;
+            padding: 5px 12px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .controls {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #8B4513, #D2691E);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 0 10px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .category-btn {
+            background: rgba(139, 69, 19, 0.3);
+            color: white;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: rgba(139, 69, 19, 0.5);
+            border-color: rgba(255, 215, 0, 0.7);
+            box-shadow: 0 4px 10px rgba(139, 69, 19, 0.3);
+        }
+
+        .youtube-btn {
+            background: linear-gradient(45deg, #FF0000, #CC0000);
+            margin-left: 10px;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .youtube-btn:hover {
+            background: linear-gradient(45deg, #CC0000, #990000);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 0, 0, 0.4);
+        }
+
+        .share-btn {
+            background: #1da1f2;
+            margin-left: 10px;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+
+        .share-btn:hover {
+            background: #0c7abf;
+        }
+
+        .youtube-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .youtube-modal-content {
+            position: relative;
+            background: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .youtube-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0 10px;
+        }
+
+        .youtube-close:hover {
+            color: #000;
+        }
+
+        .youtube-embed {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .youtube-info {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            border-left: 4px solid #FF0000;
+        }
+
+        .youtube-info h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .youtube-info p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .time-info {
+            display: inline-block;
+            background: rgba(255, 0, 0, 0.1);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: 600;
+            color: #CC0000;
+            margin-right: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .youtube-modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 15px;
+            }
+            
+            .youtube-embed {
+                height: 250px;
+            }
+            
+            .youtube-btn {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+                margin: 5px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .quote-card {
+                padding: 25px;
+            }
+            
+            .telugu-text {
+                font-size: 1.6rem;
+            }
+            
+            .english-text {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="logo.png" alt="బుద్ధివేదం Logo" class="logo" onerror="this.style.display='none'">
+            </div>
+            <h1>బుద్ధివేదం</h1>
+            <p>శ్రీ సామవేదం శంముఖ శర్మ గారి ప్రవచనాలు</p>
+            <p style="font-size: 0.9rem; opacity: 0.9; margin-top: 10px;">Wisdom from Sri Samavedam Shanmukha Sharma's Discourses</p>
+        </div>
+
+        <div class="controls">
+            <button class="btn" onclick="showRandomQuote()">Random Quote</button>
+            <button class="btn" onclick="previousQuote()">Previous</button>
+            <button class="btn" onclick="nextQuote()">Next</button>
+        </div>
+
+        <div id="quote-container">
+            <!-- Quotes will be displayed here -->
+        </div>
+
+        <!-- YouTube Modal -->
+        <div id="youtube-modal" class="youtube-modal">
+            <div class="youtube-modal-content">
+                <span class="youtube-close" onclick="closeYouTubeModal()">&times;</span>
+                <div id="youtube-info" class="youtube-info">
+                    <!-- Video info will be populated here -->
+                </div>
+                <iframe id="youtube-embed" class="youtube-embed" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // You can replace this with your JSON data from the fixed script
+        // Just copy the content of quotes_fixed.json and paste it here
+        const quotes = [
+            {
+                telugu: "విద్య అనేది మనుషుల మనస్సులో వెలుగును వెలిగిస్తుంది",
+                english: "Education lights up the flame of knowledge in human minds",
+                source: "Traditional Telugu Saying",
+                category: "wisdom",
+                title: "Value of Education"
+            },
+            {
+                telugu: "కష్టం లేకుండా కీర్తి రాదు",
+                english: "Glory cannot be achieved without hard work",
+                source: "Telugu Proverb",
+                category: "motivation",
+                title: "Hard Work and Success"
+            },
+            {
+                telugu: "మంచి మనసు మంచి మాటలు మాట్లాడుతుంది",
+                english: "A good heart speaks good words",
+                source: "Traditional Wisdom",
+                category: "life",
+                title: "Goodness of Heart"
+            },
+            {
+                telugu: "ప్రేమ అనేది భాష అవసరం లేని భావన",
+                english: "Love is an emotion that needs no language",
+                source: "Modern Telugu Quote",
+                category: "love",
+                title: "Universal Love"
+            },
+            {
+                telugu: "సమయం దాటిపోయిన తర్వాత పశ్చాత్తాపం వృథా",
+                english: "Regret is useless after time has passed",
+                source: "Telugu Wisdom",
+                category: "wisdom",
+                title: "Value of Time"
+            },
+            {
+                telugu: "నమ్మకం అనేది జీవితంలో అతి పెద్ద శక్తి",
+                english: "Faith is the greatest power in life",
+                source: "Spiritual Teaching",
+                category: "motivation",
+                title: "Power of Faith"
+            }
+        ];
+
+        // Function to load quotes from JSON file
+        async function loadQuotesFromFile() {
+            try {
+                console.log('Attempting to load quotes.json...');
+                const response = await fetch('quotes.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                console.log('Successfully loaded quotes from file');
+                return data;
+            } catch (error) {
+                console.log('Could not load quotes.json, using default quotes:', error.message);
+                return null;
+            }
+        }
+
+        let currentQuoteIndex = 0;
+        let filteredQuotes = [...quotes];
+
+        function displayQuote(index) {
+            const quote = filteredQuotes[index];
+            const container = document.getElementById('quote-container');
+            
+            // Create Telugu and English content with read more functionality
+            const teluguContent = createExpandableText(quote.telugu, 150, 'telugu');
+            const englishContent = createExpandableText(quote.english, 200, 'english');
+            
+            container.innerHTML = `
+                <div class="quote-card">
+                    <div class="quote-text telugu-text" id="telugu-${index}">
+                        ${teluguContent}
+                    </div>
+                    <div class="quote-text english-text" id="english-${index}">
+                        ${englishContent}
+                    </div>
+                    <div class="quote-meta">
+                        <span class="meta-item">📖 ${quote.source || 'గురుగారి ప్రవచనం'}</span>
+                        <span class="meta-item">🏷️ ${quote.category || 'Wisdom'}</span>
+                        <span class="meta-item">📝 ${quote.title || 'Spiritual Teaching'}</span>
+                        ${quote['youtube-link'] ? `<button class="btn youtube-btn" onclick="playYouTubeClip(${index})">🎥 Watch Original</button>` : ''}
+                        <button class="btn share-btn" onclick="shareQuote(${index})">Share</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function createExpandableText(text, maxLength, language) {
+            if (!text) return '';
+            
+            // Much shorter limits for better UX
+            const shortLimit = language === 'telugu' ? 80 : 100; // Very short snippet
+            const mediumLimit = language === 'telugu' ? 150 : 180; // Medium snippet
+            
+            // If text is very short, return as is
+            if (text.length <= shortLimit) {
+                return text;
+            }
+            
+            // Determine snippet length based on total text length
+            let snippetLength;
+            if (text.length > 500) {
+                snippetLength = shortLimit; // Very long text gets very short snippet
+            } else if (text.length > 250) {
+                snippetLength = mediumLimit; // Medium text gets medium snippet
+            } else {
+                snippetLength = Math.floor(text.length * 0.6); // Show 60% for shorter texts
+            }
+            
+            // Find a good breaking point
+            let breakPoint = snippetLength;
+            
+            // Try to break at sentence boundaries first
+            const sentences = text.split(/[.।\n]/);
+            if (sentences.length > 1 && sentences[0].length > 30 && sentences[0].length <= snippetLength + 20) {
+                breakPoint = sentences[0].length;
+            } else {
+                // Find last space or punctuation before snippetLength
+                while (breakPoint > Math.max(30, snippetLength * 0.7) && 
+                       text[breakPoint] !== ' ' && 
+                       text[breakPoint] !== ',' && 
+                       text[breakPoint] !== '।') {
+                    breakPoint--;
+                }
+            }
+            
+            const snippet = text.substring(0, breakPoint).trim();
+            const remaining = text.substring(breakPoint).trim();
+            
+            // Only add read more if there's significant content remaining
+            if (remaining.length < 20) {
+                return text; // Just show full text if remaining is very short
+            }
+            
+            const uniqueId = `expandable-${language}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+            
+            return `
+                <span class="quote-snippet collapsed" id="${uniqueId}">
+                    <span class="snippet-text">${snippet}</span>
+                    <span class="remaining-text" style="display: none;"> ${remaining}</span>
+                </span>
+                <br>
+                <button class="read-more-btn" onclick="toggleReadMore('${uniqueId}', this)">
+                    <span class="btn-text-more">Read More</span>
+                    <span class="btn-text-less" style="display: none;">Read Less</span>
+                </button>
+            `;
+        }
+
+        function toggleReadMore(elementId, button) {
+            const element = document.getElementById(elementId);
+            const snippetText = element.querySelector('.snippet-text');
+            const remainingText = element.querySelector('.remaining-text');
+            const moreText = button.querySelector('.btn-text-more');
+            const lessText = button.querySelector('.btn-text-less');
+            const isExpanded = !element.classList.contains('collapsed');
+            
+            if (isExpanded) {
+                // Collapse
+                remainingText.style.display = 'none';
+                element.classList.add('collapsed');
+                moreText.style.display = 'inline';
+                lessText.style.display = 'none';
+                
+                // Smooth scroll back to the beginning of the quote
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            } else {
+                // Expand
+                remainingText.style.display = 'inline';
+                element.classList.remove('collapsed');
+                element.classList.add('quote-expanded');
+                moreText.style.display = 'none';
+                lessText.style.display = 'inline';
+                
+                // Scroll smoothly to show more content if needed
+                setTimeout(() => {
+                    const card = element.closest('.quote-card');
+                    if (card) {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, 100);
+            }
+        }
+
+        function showRandomQuote() {
+            currentQuoteIndex = Math.floor(Math.random() * filteredQuotes.length);
+            displayQuote(currentQuoteIndex);
+        }
+
+        function nextQuote() {
+            currentQuoteIndex = (currentQuoteIndex + 1) % filteredQuotes.length;
+            displayQuote(currentQuoteIndex);
+        }
+
+        function previousQuote() {
+            currentQuoteIndex = (currentQuoteIndex - 1 + filteredQuotes.length) % filteredQuotes.length;
+            displayQuote(currentQuoteIndex);
+        }
+
+        function filterQuotes(category) {
+            // Update active category button
+            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter quotes
+            if (category === 'all') {
+                filteredQuotes = [...quotes];
+            } else {
+                filteredQuotes = quotes.filter(quote => quote.category === category);
+            }
+            
+            currentQuoteIndex = 0;
+            displayQuote(currentQuoteIndex);
+        }
+
+        function shareQuote(index) {
+            const quote = filteredQuotes[index];
+            
+            // Get the full text (expanded or not)
+            const teluguElement = document.querySelector(`#telugu-${index} .quote-snippet`);
+            const englishElement = document.querySelector(`#english-${index} .quote-snippet`);
+            
+            let teluguText = quote.telugu;
+            let englishText = quote.english;
+            
+            // If elements exist, get the full text
+            if (teluguElement) {
+                const snippetText = teluguElement.querySelector('.snippet-text')?.textContent || '';
+                const remainingText = teluguElement.querySelector('.remaining-text')?.textContent || '';
+                teluguText = snippetText + remainingText;
+            }
+            
+            if (englishElement) {
+                const snippetText = englishElement.querySelector('.snippet-text')?.textContent || '';
+                const remainingText = englishElement.querySelector('.remaining-text')?.textContent || '';
+                englishText = snippetText + remainingText;
+            }
+            
+            const shareText = `"${teluguText}"\n\n"${englishText}"\n\n- ${quote.source || 'గురుగారి ప్రవచనం'}\n\n#రుషివాక్కులు #బుద్ధివేదం`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: quote.title || 'రుషి వాక్కులు',
+                    text: shareText,
+                    url: window.location.href
+                });
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                const textarea = document.createElement('textarea');
+                textarea.value = shareText;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                alert('Quote copied to clipboard!');
+            }
+        }
+
+        // Load quotes and initialize
+        async function initializeApp() {
+            try {
+                const loadedQuotes = await loadQuotesFromFile();
+                if (loadedQuotes && loadedQuotes.length > 0) {
+                    // Replace the default quotes with loaded ones
+                    quotes.length = 0;
+                    quotes.push(...loadedQuotes);
+                    filteredQuotes = [...quotes];
+                    console.log(`Loaded ${quotes.length} quotes from JSON file`);
+                }
+            } catch (error) {
+                console.log('Using default quotes:', error);
+            }
+            
+            // Initialize with first quote
+            displayQuote(0);
+        }
+
+        // Load custom JSON file
+        function loadCustomJSON(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const customQuotes = JSON.parse(e.target.result);
+                    if (Array.isArray(customQuotes) && customQuotes.length > 0) {
+                        quotes.length = 0;
+                        quotes.push(...customQuotes);
+                        filteredQuotes = [...quotes];
+                        currentQuoteIndex = 0;
+                        displayQuote(currentQuoteIndex);
+                        alert(`Successfully loaded ${quotes.length} quotes!`);
+                    } else {
+                        alert('Invalid JSON format. Please check your file.');
+                    }
+                } catch (error) {
+                    alert('Error reading JSON file: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function parseTimeToSeconds(timeString) {
+            if (!timeString) return 0;
+            
+            // Handle formats like "2:10", "1:30:45", "45" (seconds only)
+            const parts = timeString.split(':').reverse();
+            let seconds = 0;
+            
+            if (parts[0]) seconds += parseInt(parts[0]) || 0; // seconds
+            if (parts[1]) seconds += (parseInt(parts[1]) || 0) * 60; // minutes
+            if (parts[2]) seconds += (parseInt(parts[2]) || 0) * 3600; // hours
+            
+            return seconds;
+        }
+
+        function getYouTubeVideoId(url) {
+            if (!url) return null;
+            
+            // Extract video ID from various YouTube URL formats
+            const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[7].length === 11) ? match[7] : null;
+        }
+
+        function playYouTubeClip(index) {
+            const quote = filteredQuotes[index];
+            const youtubeLink = quote['youtube-link'];
+            const startTime = quote['start-time'];
+            const endTime = quote['end-time'];
+            const youtubeTitle = quote['youtube-title'] || 'గురుగారి ప్రవచనం';
+            
+            if (!youtubeLink) {
+                alert('YouTube link not available for this quote.');
+                return;
+            }
+            
+            const videoId = getYouTubeVideoId(youtubeLink);
+            if (!videoId) {
+                alert('Invalid YouTube URL format.');
+                return;
+            }
+            
+            const startSeconds = parseTimeToSeconds(startTime);
+            const endSeconds = parseTimeToSeconds(endTime);
+            
+            // Build YouTube embed URL with start and end times
+            let embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=${startSeconds}`;
+            if (endTime && endSeconds > startSeconds) {
+                embedUrl += `&end=${endSeconds}`;
+            }
+            
+            // Additional parameters for better experience
+            embedUrl += '&rel=0&modestbranding=1&showinfo=0';
+            
+            // Update modal content
+            document.getElementById('youtube-info').innerHTML = `
+                <h3>🎬 ${youtubeTitle}</h3>
+                <p><strong>Quote:</strong> "${quote.telugu.substring(0, 100)}${quote.telugu.length > 100 ? '...' : ''}"</p>
+                <div>
+                    <span class="time-info">⏰ ${startTime} - ${endTime || 'End'}</span>
+                    <span class="time-info">📺 Original Pravachanam</span>
+                </div>
+            `;
+            
+            // Set iframe source
+            document.getElementById('youtube-embed').src = embedUrl;
+            
+            // Show modal
+            document.getElementById('youtube-modal').style.display = 'block';
+            
+            // Auto-close after the clip duration (if end time is specified)
+            if (endTime && endSeconds > startSeconds) {
+                const clipDuration = (endSeconds - startSeconds + 5) * 1000; // Add 5 seconds buffer
+                setTimeout(() => {
+                    if (document.getElementById('youtube-modal').style.display === 'block') {
+                        // Don't auto-close, let user decide
+                        // closeYouTubeModal();
+                    }
+                }, clipDuration);
+            }
+        }
+
+        function closeYouTubeModal() {
+            document.getElementById('youtube-modal').style.display = 'none';
+            document.getElementById('youtube-embed').src = ''; // Stop video
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('youtube-modal');
+            if (event.target === modal) {
+                closeYouTubeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeYouTubeModal();
+            }
+        });
+
+        // Start the app
+        initializeApp();
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextQuote();
+            } else if (e.key === 'ArrowLeft') {
+                previousQuote();
+            } else if (e.key === 'r' || e.key === 'R') {
+                showRandomQuote();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #F4A460 100%);
             min-height: 100vh;
-            padding: 20px;
+            padding: 10px;
             line-height: 1.6;
             position: relative;
             overflow-x: hidden;
@@ -34,7 +34,7 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 50px;
+            height: 40px;
             background: repeating-linear-gradient(
                 90deg,
                 #8B4513 0px,
@@ -42,26 +42,27 @@
                 #8B4513 40px
             );
             background-image: 
-                radial-gradient(circle at 10px 25px, #FFD700 8px, transparent 8px),
-                radial-gradient(circle at 30px 25px, #FFD700 8px, transparent 8px);
-            background-size: 40px 50px;
-            border-bottom: 3px solid #FFD700;
+                radial-gradient(circle at 10px 20px, #FFD700 6px, transparent 6px),
+                radial-gradient(circle at 30px 20px, #FFD700 6px, transparent 6px);
+            background-size: 40px 40px;
+            border-bottom: 2px solid #FFD700;
             z-index: 10;
         }
 
         .container {
             max-width: 800px;
-            margin: 60px auto 0;
+            margin: 50px auto 0;
             position: relative;
+            padding: 0 5px;
         }
 
         .logo-container {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .logo {
-            max-height: 120px;
+            max-height: 80px;
             width: auto;
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
             transition: transform 0.3s ease;
@@ -73,18 +74,18 @@
 
         .header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             color: white;
             background: rgba(139, 69, 19, 0.2);
-            padding: 30px;
-            border-radius: 20px;
+            padding: 20px 15px;
+            border-radius: 15px;
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 215, 0, 0.3);
         }
 
         .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 8px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             color: #FFD700;
             font-weight: bold;
@@ -92,17 +93,100 @@
 
         .header p {
             color: #FFF8DC;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            margin-bottom: 5px;
+        }
+
+        .search-container {
+            margin-bottom: 15px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            margin-bottom: 10px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: rgba(255, 215, 0, 0.8);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .category-filter {
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .category-btn {
+            background: rgba(139, 69, 19, 0.3);
+            color: white;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            white-space: nowrap;
+            min-width: 80px;
+            touch-action: manipulation;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: rgba(139, 69, 19, 0.5);
+            border-color: rgba(255, 215, 0, 0.7);
+            box-shadow: 0 4px 10px rgba(139, 69, 19, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #8B4513, #D2691E);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            min-width: 100px;
+            touch-action: manipulation;
+        }
+
+        .btn:hover, .btn:active {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+            border-color: rgba(255, 215, 0, 0.5);
         }
 
         .quote-card {
             background: linear-gradient(145deg, rgba(255, 248, 220, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 20px 0;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
             box-shadow: 
-                0 20px 40px rgba(139, 69, 19, 0.2),
+                0 15px 30px rgba(139, 69, 19, 0.2),
                 inset 0 1px 0 rgba(255, 215, 0, 0.2);
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 215, 0, 0.3);
@@ -112,42 +196,41 @@
         }
 
         .quote-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: 
-                0 25px 50px rgba(139, 69, 19, 0.3),
+                0 20px 40px rgba(139, 69, 19, 0.25),
                 inset 0 1px 0 rgba(255, 215, 0, 0.3);
         }
 
         .quote-card::before {
             content: '';
             position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
             border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: 15px;
+            border-radius: 10px;
             pointer-events: none;
         }
 
         .quote-text {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #333;
             text-align: center;
-            line-height: 1.4;
+            line-height: 1.5;
             position: relative;
         }
 
         .telugu-text {
-            font-size: 2rem;
+            font-size: clamp(1.4rem, 4vw, 2rem);
             font-weight: 600;
             color: #2d3748;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .english-text {
-            font-size: 1.4rem;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
             color: #4a5568;
             font-style: italic;
         }
@@ -165,16 +248,17 @@
 
         .read-more-btn {
             display: inline-block;
-            margin-top: 10px;
-            padding: 8px 16px;
+            margin-top: 8px;
+            padding: 6px 12px;
             background: linear-gradient(45deg, #8B4513, #D2691E);
             color: white;
             border: none;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            border-radius: 15px;
+            font-size: 13px;
             cursor: pointer;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 215, 0, 0.3);
+            touch-action: manipulation;
         }
 
         .read-more-btn:hover {
@@ -199,70 +283,37 @@
         }
 
         .quote-meta {
-            margin-top: 25px;
-            padding-top: 20px;
+            margin-top: 20px;
+            padding-top: 15px;
             border-top: 2px solid #e2e8f0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
         }
 
         .meta-item {
-            display: inline-block;
-            margin: 5px 15px 5px 0;
-            padding: 5px 12px;
+            padding: 6px 12px;
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            border-radius: 15px;
+            font-size: 12px;
             font-weight: 500;
+            white-space: nowrap;
         }
 
-        .controls {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .btn {
-            background: linear-gradient(45deg, #8B4513, #D2691E);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            margin: 0 10px;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
-            border: 2px solid rgba(255, 215, 0, 0.3);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
-            border-color: rgba(255, 215, 0, 0.5);
-        }
-
-        .category-btn {
-            background: rgba(139, 69, 19, 0.3);
-            color: white;
-            border: 2px solid rgba(255, 215, 0, 0.4);
-            padding: 10px 20px;
-            margin: 5px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .category-btn:hover,
-        .category-btn.active {
-            background: rgba(139, 69, 19, 0.5);
-            border-color: rgba(255, 215, 0, 0.7);
-            box-shadow: 0 4px 10px rgba(139, 69, 19, 0.3);
+        .action-buttons {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
         }
 
         .youtube-btn {
             background: linear-gradient(45deg, #FF0000, #CC0000);
-            margin-left: 10px;
-            padding: 10px 20px;
-            font-size: 0.9rem;
+            padding: 8px 16px;
+            font-size: 13px;
             border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
@@ -273,14 +324,13 @@
         }
 
         .share-btn {
-            background: #1da1f2;
-            margin-left: 10px;
-            padding: 10px 20px;
-            font-size: 0.9rem;
+            background: linear-gradient(45deg, #1da1f2, #0c7abf);
+            padding: 8px 16px;
+            font-size: 13px;
         }
 
         .share-btn:hover {
-            background: #0c7abf;
+            background: linear-gradient(45deg, #0c7abf, #0a5d8a);
         }
 
         .youtube-modal {
@@ -298,21 +348,24 @@
         .youtube-modal-content {
             position: relative;
             background: #fff;
-            margin: 5% auto;
-            padding: 20px;
-            width: 90%;
+            margin: 2% auto;
+            padding: 15px;
+            width: 95%;
             max-width: 800px;
             border-radius: 15px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .youtube-close {
             color: #aaa;
             float: right;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
             cursor: pointer;
-            padding: 0 10px;
+            padding: 5px 10px;
+            touch-action: manipulation;
         }
 
         .youtube-close:hover {
@@ -321,7 +374,7 @@
 
         .youtube-embed {
             width: 100%;
-            height: 400px;
+            height: clamp(200px, 50vw, 400px);
             border: none;
             border-radius: 10px;
         }
@@ -337,67 +390,236 @@
         .youtube-info h3 {
             color: #2d3748;
             margin-bottom: 10px;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
         }
 
         .youtube-info p {
             color: #666;
             margin: 5px 0;
+            font-size: 14px;
         }
 
         .time-info {
             display: inline-block;
             background: rgba(255, 0, 0, 0.1);
-            padding: 5px 10px;
-            border-radius: 15px;
+            padding: 4px 8px;
+            border-radius: 12px;
             font-weight: 600;
             color: #CC0000;
-            margin-right: 15px;
+            margin: 2px 5px 2px 0;
+            font-size: 12px;
         }
 
-        @media (max-width: 768px) {
-            .youtube-modal-content {
-                width: 95%;
-                margin: 10% auto;
-                padding: 15px;
-            }
-            
-            .youtube-embed {
-                height: 250px;
-            }
-            
-            .youtube-btn {
-                padding: 8px 15px;
-                font-size: 0.8rem;
-                margin: 5px 0;
-            }
+        .search-results {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: white;
+            font-weight: 500;
         }
 
+        .no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: #333;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .no-results h3 {
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .no-results ul {
+            list-style: none;
+            margin: 15px 0;
+            text-align: left;
+            max-width: 400px;
+            margin: 15px auto;
+        }
+
+        .no-results li {
+            margin: 8px 0;
+            padding-left: 10px;
+        }
+
+        /* Enhanced Mobile Responsiveness */
         @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+
+            body::before {
+                height: 35px;
+            }
+
             .container {
-                padding: 10px;
+                margin-top: 40px;
+                padding: 0 3px;
             }
-            
-            .header h1 {
-                font-size: 2rem;
+
+            .header {
+                padding: 15px 12px;
+                margin-bottom: 15px;
             }
-            
+
+            .logo {
+                max-height: 60px;
+            }
+
             .quote-card {
-                padding: 25px;
+                padding: 15px;
+                margin: 10px 0;
+                border-radius: 12px;
             }
-            
+
+            .quote-card::before {
+                top: 5px;
+                left: 5px;
+                right: 5px;
+                bottom: 5px;
+            }
+
             .telugu-text {
-                font-size: 1.6rem;
+                font-size: clamp(1.2rem, 5vw, 1.6rem);
+                margin-bottom: 10px;
             }
-            
+
             .english-text {
-                font-size: 1.2rem;
+                font-size: clamp(1rem, 4vw, 1.2rem);
             }
-            
+
+            .controls {
+                margin: 15px 0;
+                gap: 6px;
+            }
+
             .btn {
-                padding: 12px 25px;
-                font-size: 1rem;
-                margin: 5px;
+                padding: 10px 16px;
+                font-size: 13px;
+                min-width: 90px;
+            }
+
+            .category-filter {
+                gap: 6px;
+                margin-bottom: 15px;
+            }
+
+            .category-btn {
+                padding: 6px 12px;
+                font-size: 13px;
+                min-width: 70px;
+            }
+
+            .quote-meta {
+                margin-top: 15px;
+                padding-top: 12px;
+                gap: 6px;
+            }
+
+            .meta-item {
+                padding: 4px 8px;
+                font-size: 11px;
+            }
+
+            .action-buttons {
+                margin-top: 12px;
+                gap: 6px;
+            }
+
+            .youtube-btn,
+            .share-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            .youtube-modal-content {
+                margin: 5% auto;
+                padding: 10px;
+                width: 98%;
+            }
+
+            .youtube-embed {
+                height: clamp(180px, 45vw, 250px);
+            }
+
+            .search-input {
+                padding: 10px 12px;
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 2px;
+            }
+
+            .header {
+                padding: 12px 10px;
+            }
+
+            .quote-card {
+                padding: 12px;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 200px;
+                margin: 3px 0;
+            }
+
+            .category-filter {
+                justify-content: center;
+            }
+
+            .category-btn {
+                flex: 1;
+                min-width: 60px;
+                max-width: 100px;
+            }
+
+            .quote-meta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .youtube-btn,
+            .share-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+
+        /* Touch improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .btn:hover,
+            .category-btn:hover,
+            .read-more-btn:hover,
+            .youtube-btn:hover,
+            .share-btn:hover {
+                transform: none;
+            }
+
+            .btn:active,
+            .category-btn:active,
+            .read-more-btn:active {
+                transform: scale(0.98);
+                transition: transform 0.1s ease;
             }
         }
     </style>
@@ -410,12 +632,17 @@
             </div>
             <h1>బుద్ధివేదం</h1>
             <p>శ్రీ సామవేదం శంముఖ శర్మ గారి ప్రవచనాలు</p>
-            <p style="font-size: 0.9rem; opacity: 0.9; margin-top: 10px;">Wisdom from Sri Samavedam Shanmukha Sharma's Discourses</p>
+            <p style="font-size: 0.9rem; opacity: 0.9; margin-top: 8px;">Wisdom from Sri Samavedam Shanmukha Sharma's Discourses</p>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search quotes in English... (wisdom, dharma, life, etc.)" class="search-input">
+            <div style="text-align: center;">
+                <button class="category-btn" onclick="searchQuotes()">🔍 Search</button>
+            </div>
         </div>
 
         <div class="category-filter">
-            <input type="text" id="search-input" placeholder="Search quotes in English... (wisdom, dharma, life, etc.)" class="search-input">
-            <button class="btn search-btn" onclick="searchQuotes()">🔍 Search</button>
             <button class="category-btn active" onclick="filterQuotes('all')">All</button>
             <button class="category-btn" onclick="filterQuotes('Dharma')">Dharma</button>
             <button class="category-btn" onclick="filterQuotes('Sadaacharam')">Sadaacharam</button>
@@ -424,8 +651,6 @@
         </div>
 
         <div class="controls">
-            <input type="file" id="jsonFileInput" accept=".json" style="display: none;" onchange="loadCustomJSON(event)">
-            <button class="btn" onclick="document.getElementById('jsonFileInput').click()">Upload JSON</button>
             <button class="btn" onclick="showRandomQuote()">Random Quote</button>
             <button class="btn" onclick="previousQuote()">Previous</button>
             <button class="btn" onclick="nextQuote()">Next</button>
@@ -448,75 +673,59 @@
     </div>
 
     <script>
-        // You can replace this with your JSON data from the fixed script
-        // Just copy the content of quotes_fixed.json and paste it here
         const quotes = [
             {
-                telugu: "విద్య అనేది మనుషుల మనస్సులో వెలుగును వెలిగిస్తుంది",
-                english: "Education lights up the flame of knowledge in human minds",
-                source: "Traditional Telugu Saying",
-                category: "wisdom",
-                title: "Value of Education"
+                telugu: "విద్య అనేది మనుషుల మనస్సులో వెలుగును వెలిగిస్తుంది. జ్ఞానం వల్ల మనిషి అజ్ఞానాంధకారం నుండి విముక్తి పొందుతాడు. విద్య లేని వ్యక్తి చీకట్లో నడిచే వాడిలా ఉంటాడు.",
+                english: "Education lights up the flame of knowledge in human minds. Through knowledge, a person gets liberation from the darkness of ignorance. A person without education is like someone walking in darkness.",
+                source: "గురుగారి ప్రవచనం",
+                category: "Dharma",
+                title: "Value of Education",
+                "youtube-link": "https://www.youtube.com/watch?v=example1",
+                "start-time": "2:10",
+                "end-time": "3:45",
+                "youtube-title": "విద్య మహత్వం గురించి గురుగారి అమృత వచనాలు"
             },
             {
-                telugu: "కష్టం లేకుండా కీర్తి రాదు",
-                english: "Glory cannot be achieved without hard work",
-                source: "Telugu Proverb",
-                category: "motivation",
+                telugu: "కష్టం లేకుండా కీర్తి రాదు. పరిశ్రమ చేసిన వాడికే ఫలితం లభిస్తుంది. సంకల్పం ఉన్న చోట మార్గం దొరుకుతుంది.",
+                english: "Glory cannot be achieved without hard work. Only those who work diligently will get results. Where there is determination, a way will be found.",
+                source: "గురుగారి ప్రవచనం",
+                category: "Saadhana",
                 title: "Hard Work and Success"
             },
             {
-                telugu: "మంచి మనసు మంచి మాటలు మాట్లాడుతుంది",
-                english: "A good heart speaks good words",
-                source: "Traditional Wisdom",
-                category: "life",
+                telugu: "మంచి మనసు మంచి మాటలు మాట్లాడుతుంది. హృదయంలో దయ ఉన్న వాడు ఎల్లప్పుడూ మధురమైన వాక్కులే పలుకుతాడు.",
+                english: "A good heart speaks good words. One who has compassion in their heart will always speak sweet words.",
+                source: "గురుగారి ప్రవచనం",
+                category: "Sadaacharam",
                 title: "Goodness of Heart"
             },
             {
-                telugu: "ప్రేమ అనేది భాష అవసరం లేని భావన",
-                english: "Love is an emotion that needs no language",
-                source: "Modern Telugu Quote",
-                category: "love",
+                telugu: "ప్రేమ అనేది భాష అవసరం లేని భావన. అది హృదయం నుండి హృదయానికి చేరే శక్తి. ప్రేమలో ఎలాంటి అవరోధాలు ఉండవు.",
+                english: "Love is an emotion that needs no language. It is the power that reaches from heart to heart. There are no barriers in love.",
+                source: "గురుగారి ప్రవచనం",
+                category: "Dharma",
                 title: "Universal Love"
             },
             {
-                telugu: "సమయం దాటిపోయిన తర్వాత పశ్చాత్తాపం వృథా",
-                english: "Regret is useless after time has passed",
-                source: "Telugu Wisdom",
-                category: "wisdom",
+                telugu: "సమయం దాటిపోయిన తర్వాత పశ్చాత్తాపం వృథా. కాలాన్ని సద్వినియోగం చేసుకోవాలి. ప్రతి క్షణం విలువైనది.",
+                english: "Regret is useless after time has passed. Time should be used wisely. Every moment is precious.",
+                source: "గురుగారి ప్రవచనం",
+                category: "Sadaacharam",
                 title: "Value of Time"
             },
             {
-                telugu: "నమ్మకం అనేది జీవితంలో అతి పెద్ద శక్తి",
-                english: "Faith is the greatest power in life",
-                source: "Spiritual Teaching",
-                category: "motivation",
+                telugu: "నమ్మకం అనేది జీవితంలో అతి పెద్ద శక్తి. విశ్వాసం ఉన్న చోట అసాధ్యమైన పనులు కూడా సాధ్యమవుతాయి.",
+                english: "Faith is the greatest power in life. Where there is belief, even impossible tasks become possible.",
+                source: "గురుగారి ప్రవచనం",
+                category: "Saadhana",
                 title: "Power of Faith"
             }
         ];
-
-        // Function to load quotes from JSON file
-        async function loadQuotesFromFile() {
-            try {
-                console.log('Attempting to load quotes.json...');
-                const response = await fetch('quotes.json');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json();
-                console.log('Successfully loaded quotes from file');
-                return data;
-            } catch (error) {
-                console.log('Could not load quotes.json, using default quotes:', error.message);
-                return null;
-            }
-        }
 
         let currentQuoteIndex = 0;
         let filteredQuotes = [...quotes];
         let searchActive = false;
 
-        // Search functionality - English text only
         function searchQuotes() {
             const searchTerm = document.getElementById('search-input').value.trim().toLowerCase();
             
@@ -530,10 +739,7 @@
 
             searchActive = true;
             filteredQuotes = quotes.filter(quote => {
-                // Search only in English text
                 const englishMatch = quote.english && quote.english.toLowerCase().includes(searchTerm);
-                
-                // Also search in title and category for better results
                 const titleMatch = quote.title && quote.title.toLowerCase().includes(searchTerm);
                 const categoryMatch = quote.category && quote.category.toLowerCase().includes(searchTerm);
                 
@@ -562,7 +768,7 @@
                 resultsDiv.className = 'search-results';
                 resultsDiv.innerHTML = `Found ${filteredQuotes.length} quotes for "${searchTerm}"`;
                 
-                const container = document.querySelector('.category-filter');
+                const container = document.querySelector('.search-container');
                 container.parentNode.insertBefore(resultsDiv, container.nextSibling);
             }
         }
@@ -575,7 +781,7 @@
                 <div class="no-results">
                     <h3>🔍 No quotes found for "${searchTerm}"</h3>
                     <p>Try searching for:</p>
-                    <ul style="list-style: none; margin: 15px 0; text-align: left; max-width: 400px; margin: 15px auto;">
+                    <ul>
                         <li>• <strong>Concepts:</strong> wisdom, dharma, spiritual, life, death</li>
                         <li>• <strong>People:</strong> vivekananda, parents, children, guru</li>
                         <li>• <strong>Topics:</strong> cow, worship, prayer, meditation</li>
@@ -594,12 +800,10 @@
             updateSearchResults();
             displayQuote(0);
             
-            // Reset category buttons
             document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelector('.category-btn').classList.add('active');
         }
 
-        // Add Enter key support for search
         document.addEventListener('DOMContentLoaded', function() {
             const searchInput = document.getElementById('search-input');
             if (searchInput) {
@@ -616,8 +820,8 @@
             const container = document.getElementById('quote-container');
             
             // Create Telugu and English content with read more functionality
-            const teluguContent = createExpandableText(quote.telugu, 150, 'telugu');
-            const englishContent = createExpandableText(quote.english, 200, 'english');
+            const teluguContent = createExpandableText(quote.telugu, 120, 'telugu');
+            const englishContent = createExpandableText(quote.english, 150, 'english');
             
             container.innerHTML = `
                 <div class="quote-card">
@@ -631,8 +835,10 @@
                         <span class="meta-item">📖 ${quote.source || 'గురుగారి ప్రవచనం'}</span>
                         <span class="meta-item">🏷️ ${quote.category || 'Wisdom'}</span>
                         <span class="meta-item">📝 ${quote.title || 'Spiritual Teaching'}</span>
+                    </div>
+                    <div class="action-buttons">
                         ${quote['youtube-link'] ? `<button class="btn youtube-btn" onclick="playYouTubeClip(${index})">🎥 Watch Original</button>` : ''}
-                        <button class="btn share-btn" onclick="shareQuote(${index})">Share</button>
+                        <button class="btn share-btn" onclick="shareQuote(${index})">📤 Share</button>
                     </div>
                 </div>
             `;
@@ -641,35 +847,30 @@
         function createExpandableText(text, maxLength, language) {
             if (!text) return '';
             
-            // Much shorter limits for better UX
-            const shortLimit = language === 'telugu' ? 80 : 100; // Very short snippet
-            const mediumLimit = language === 'telugu' ? 150 : 180; // Medium snippet
+            // Mobile-optimized shorter limits
+            const shortLimit = language === 'telugu' ? 60 : 80;
+            const mediumLimit = language === 'telugu' ? 120 : 140;
             
-            // If text is very short, return as is
             if (text.length <= shortLimit) {
                 return text;
             }
             
-            // Determine snippet length based on total text length
             let snippetLength;
-            if (text.length > 500) {
-                snippetLength = shortLimit; // Very long text gets very short snippet
-            } else if (text.length > 250) {
-                snippetLength = mediumLimit; // Medium text gets medium snippet
+            if (text.length > 400) {
+                snippetLength = shortLimit;
+            } else if (text.length > 200) {
+                snippetLength = mediumLimit;
             } else {
-                snippetLength = Math.floor(text.length * 0.6); // Show 60% for shorter texts
+                snippetLength = Math.floor(text.length * 0.6);
             }
             
-            // Find a good breaking point
             let breakPoint = snippetLength;
             
-            // Try to break at sentence boundaries first
             const sentences = text.split(/[.।\n]/);
-            if (sentences.length > 1 && sentences[0].length > 30 && sentences[0].length <= snippetLength + 20) {
+            if (sentences.length > 1 && sentences[0].length > 25 && sentences[0].length <= snippetLength + 15) {
                 breakPoint = sentences[0].length;
             } else {
-                // Find last space or punctuation before snippetLength
-                while (breakPoint > Math.max(30, snippetLength * 0.7) && 
+                while (breakPoint > Math.max(25, snippetLength * 0.7) && 
                        text[breakPoint] !== ' ' && 
                        text[breakPoint] !== ',' && 
                        text[breakPoint] !== '।') {
@@ -680,9 +881,8 @@
             const snippet = text.substring(0, breakPoint).trim();
             const remaining = text.substring(breakPoint).trim();
             
-            // Only add read more if there's significant content remaining
-            if (remaining.length < 20) {
-                return text; // Just show full text if remaining is very short
+            if (remaining.length < 15) {
+                return text;
             }
             
             const uniqueId = `expandable-${language}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
@@ -709,25 +909,21 @@
             const isExpanded = !element.classList.contains('collapsed');
             
             if (isExpanded) {
-                // Collapse
                 remainingText.style.display = 'none';
                 element.classList.add('collapsed');
                 moreText.style.display = 'inline';
                 lessText.style.display = 'none';
                 
-                // Smooth scroll back to the beginning of the quote
                 setTimeout(() => {
                     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 100);
             } else {
-                // Expand
                 remainingText.style.display = 'inline';
                 element.classList.remove('collapsed');
                 element.classList.add('quote-expanded');
                 moreText.style.display = 'none';
                 lessText.style.display = 'inline';
                 
-                // Scroll smoothly to show more content if needed
                 setTimeout(() => {
                     const card = element.closest('.quote-card');
                     if (card) {
@@ -753,16 +949,13 @@
         }
 
         function filterQuotes(category) {
-            // Clear search when using category filter
             document.getElementById('search-input').value = '';
             searchActive = false;
             updateSearchResults();
             
-            // Update active category button
             document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
             
-            // Filter quotes
             if (category === 'all') {
                 filteredQuotes = [...quotes];
             } else {
@@ -776,14 +969,12 @@
         function shareQuote(index) {
             const quote = filteredQuotes[index];
             
-            // Get the full text (expanded or not)
             const teluguElement = document.querySelector(`#telugu-${index} .quote-snippet`);
             const englishElement = document.querySelector(`#english-${index} .quote-snippet`);
             
             let teluguText = quote.telugu;
             let englishText = quote.english;
             
-            // If elements exist, get the full text
             if (teluguElement) {
                 const snippetText = teluguElement.querySelector('.snippet-text')?.textContent || '';
                 const remainingText = teluguElement.querySelector('.remaining-text')?.textContent || '';
@@ -796,32 +987,104 @@
                 englishText = snippetText + remainingText;
             }
             
-            const shareText = `"${teluguText}"\n\n"${englishText}"\n\n- ${quote.source || 'గురుగారి ప్రవచనం'}\n\n#రుషివాక్కులు #బుద్ధివేదం`;
+            const shareText = `"${teluguText}"\n\n"${englishText}"\n\n- ${quote.source || 'గురుగారి ప్రవచనం'}\n\n#బుద్ధివేదం #గురువాక్కులు`;
             
             if (navigator.share) {
                 navigator.share({
-                    title: quote.title || 'రుషి వాక్కులు',
+                    title: quote.title || 'గురువాక్కులు',
                     text: shareText,
                     url: window.location.href
+                }).catch(err => {
+                    // Fallback if sharing fails
+                    copyToClipboard(shareText);
                 });
             } else {
-                // Fallback for browsers that don't support Web Share API
-                const textarea = document.createElement('textarea');
-                textarea.value = shareText;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                alert('Quote copied to clipboard!');
+                copyToClipboard(shareText);
             }
         }
 
-        // Load quotes and initialize
+        function copyToClipboard(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast('Quote copied to clipboard!');
+                }).catch(() => {
+                    fallbackCopyToClipboard(text);
+                });
+            } else {
+                fallbackCopyToClipboard(text);
+            }
+        }
+
+        function fallbackCopyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            showToast('Quote copied to clipboard!');
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.innerHTML = message;
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(139, 69, 19, 0.9);
+                color: white;
+                padding: 12px 20px;
+                border-radius: 25px;
+                z-index: 1001;
+                font-size: 14px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                animation: toastSlide 3s ease forwards;
+            `;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                if (toast.parentNode) {
+                    toast.parentNode.removeChild(toast);
+                }
+            }, 3000);
+        }
+
+        // Add toast animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes toastSlide {
+                0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+                10%, 90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        async function loadQuotesFromFile() {
+            try {
+                console.log('Attempting to load quotes.json...');
+                const response = await fetch('quotes.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                console.log('Successfully loaded quotes from file');
+                return data;
+            } catch (error) {
+                console.log('Could not load quotes.json, using default quotes:', error.message);
+                return null;
+            }
+        }
+
         async function initializeApp() {
             try {
                 const loadedQuotes = await loadQuotesFromFile();
                 if (loadedQuotes && loadedQuotes.length > 0) {
-                    // Replace the default quotes with loaded ones
                     quotes.length = 0;
                     quotes.push(...loadedQuotes);
                     filteredQuotes = [...quotes];
@@ -831,46 +1094,18 @@
                 console.log('Using default quotes:', error);
             }
             
-            // Initialize with first quote
             displayQuote(0);
-        }
-
-        // Load custom JSON file
-        function loadCustomJSON(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-            
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const customQuotes = JSON.parse(e.target.result);
-                    if (Array.isArray(customQuotes) && customQuotes.length > 0) {
-                        quotes.length = 0;
-                        quotes.push(...customQuotes);
-                        filteredQuotes = [...quotes];
-                        currentQuoteIndex = 0;
-                        displayQuote(currentQuoteIndex);
-                        alert(`Successfully loaded ${quotes.length} quotes!`);
-                    } else {
-                        alert('Invalid JSON format. Please check your file.');
-                    }
-                } catch (error) {
-                    alert('Error reading JSON file: ' + error.message);
-                }
-            };
-            reader.readAsText(file);
         }
 
         function parseTimeToSeconds(timeString) {
             if (!timeString) return 0;
             
-            // Handle formats like "2:10", "1:30:45", "45" (seconds only)
             const parts = timeString.split(':').reverse();
             let seconds = 0;
             
-            if (parts[0]) seconds += parseInt(parts[0]) || 0; // seconds
-            if (parts[1]) seconds += (parseInt(parts[1]) || 0) * 60; // minutes
-            if (parts[2]) seconds += (parseInt(parts[2]) || 0) * 3600; // hours
+            if (parts[0]) seconds += parseInt(parts[0]) || 0;
+            if (parts[1]) seconds += (parseInt(parts[1]) || 0) * 60;
+            if (parts[2]) seconds += (parseInt(parts[2]) || 0) * 3600;
             
             return seconds;
         }
@@ -878,7 +1113,6 @@
         function getYouTubeVideoId(url) {
             if (!url) return null;
             
-            // Extract video ID from various YouTube URL formats
             const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
             const match = url.match(regExp);
             return (match && match[7].length === 11) ? match[7] : null;
@@ -892,62 +1126,44 @@
             const youtubeTitle = quote['youtube-title'] || 'గురుగారి ప్రవచనం';
             
             if (!youtubeLink) {
-                alert('YouTube link not available for this quote.');
+                showToast('YouTube link not available for this quote.');
                 return;
             }
             
             const videoId = getYouTubeVideoId(youtubeLink);
             if (!videoId) {
-                alert('Invalid YouTube URL format.');
+                showToast('Invalid YouTube URL format.');
                 return;
             }
             
             const startSeconds = parseTimeToSeconds(startTime);
             const endSeconds = parseTimeToSeconds(endTime);
             
-            // Build YouTube embed URL with start and end times
             let embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=${startSeconds}`;
             if (endTime && endSeconds > startSeconds) {
                 embedUrl += `&end=${endSeconds}`;
             }
             
-            // Additional parameters for better experience
             embedUrl += '&rel=0&modestbranding=1&showinfo=0';
             
-            // Update modal content
             document.getElementById('youtube-info').innerHTML = `
                 <h3>🎬 ${youtubeTitle}</h3>
-                <p><strong>Quote:</strong> "${quote.telugu.substring(0, 100)}${quote.telugu.length > 100 ? '...' : ''}"</p>
+                <p><strong>Quote:</strong> "${quote.telugu.substring(0, 80)}${quote.telugu.length > 80 ? '...' : ''}"</p>
                 <div>
                     <span class="time-info">⏰ ${startTime} - ${endTime || 'End'}</span>
                     <span class="time-info">📺 Original Pravachanam</span>
                 </div>
             `;
             
-            // Set iframe source
             document.getElementById('youtube-embed').src = embedUrl;
-            
-            // Show modal
             document.getElementById('youtube-modal').style.display = 'block';
-            
-            // Auto-close after the clip duration (if end time is specified)
-            if (endTime && endSeconds > startSeconds) {
-                const clipDuration = (endSeconds - startSeconds + 5) * 1000; // Add 5 seconds buffer
-                setTimeout(() => {
-                    if (document.getElementById('youtube-modal').style.display === 'block') {
-                        // Don't auto-close, let user decide
-                        // closeYouTubeModal();
-                    }
-                }, clipDuration);
-            }
         }
 
         function closeYouTubeModal() {
             document.getElementById('youtube-modal').style.display = 'none';
-            document.getElementById('youtube-embed').src = ''; // Stop video
+            document.getElementById('youtube-embed').src = '';
         }
 
-        // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('youtube-modal');
             if (event.target === modal) {
@@ -955,26 +1171,38 @@
             }
         }
 
-        // Close modal with Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeYouTubeModal();
             }
         });
 
-        // Start the app
         initializeApp();
 
-        // Keyboard navigation
         document.addEventListener('keydown', function(e) {
+            if (e.target.tagName === 'INPUT') return;
+            
             if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
                 nextQuote();
             } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
                 previousQuote();
             } else if (e.key === 'r' || e.key === 'R') {
+                e.preventDefault();
                 showRandomQuote();
             }
         });
+
+        // Prevent zoom on double tap for better mobile experience
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
     </script>
 </body>
 </html>

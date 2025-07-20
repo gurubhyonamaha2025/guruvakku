@@ -408,23 +408,29 @@
             <div class="logo-container">
                 <img src="logo.png" alt="బుద్ధివేదం Logo" class="logo" onerror="this.style.display='none'">
             </div>
-            <h1>రుషి విజ్ఞానం</h1>
+            <h1>బుద్ధివేదం</h1>
             <p>శ్రీ సామవేదం శంముఖ శర్మ గారి ప్రవచనాలు</p>
-            <h3>Rushi Vignyanam</h3>
             <p style="font-size: 0.9rem; opacity: 0.9; margin-top: 10px;">Wisdom from Sri Samavedam Shanmukha Sharma's Discourses</p>
         </div>
-         <div class="category-filter">
+
+        <div class="category-filter">
+            <input type="text" id="search-input" placeholder="Search quotes in English... (wisdom, dharma, life, etc.)" class="search-input">
+            <button class="btn search-btn" onclick="searchQuotes()">🔍 Search</button>
             <button class="category-btn active" onclick="filterQuotes('all')">All</button>
             <button class="category-btn" onclick="filterQuotes('Dharma')">Dharma</button>
-            <button class="category-btn" onclick="filterQuotes('Saadhana')">Saadhana</button>
             <button class="category-btn" onclick="filterQuotes('Sadaacharam')">Sadaacharam</button>
-            <button class="category-btn" onclick="filterQuotes('DesamDharmam')">DesamDharmam</button>
+            <button class="category-btn" onclick="filterQuotes('DesamDharmam')">Desam & Dharmam</button>
+            <button class="category-btn" onclick="filterQuotes('Saadhana')">Saadhana</button>
         </div>
+
         <div class="controls">
+            <input type="file" id="jsonFileInput" accept=".json" style="display: none;" onchange="loadCustomJSON(event)">
+            <button class="btn" onclick="document.getElementById('jsonFileInput').click()">Upload JSON</button>
             <button class="btn" onclick="showRandomQuote()">Random Quote</button>
             <button class="btn" onclick="previousQuote()">Previous</button>
             <button class="btn" onclick="nextQuote()">Next</button>
         </div>
+
         <div id="quote-container">
             <!-- Quotes will be displayed here -->
         </div>
@@ -508,6 +514,102 @@
 
         let currentQuoteIndex = 0;
         let filteredQuotes = [...quotes];
+        let searchActive = false;
+
+        // Search functionality - English text only
+        function searchQuotes() {
+            const searchTerm = document.getElementById('search-input').value.trim().toLowerCase();
+            
+            if (!searchTerm) {
+                filteredQuotes = [...quotes];
+                searchActive = false;
+                updateSearchResults();
+                displayQuote(0);
+                return;
+            }
+
+            searchActive = true;
+            filteredQuotes = quotes.filter(quote => {
+                // Search only in English text
+                const englishMatch = quote.english && quote.english.toLowerCase().includes(searchTerm);
+                
+                // Also search in title and category for better results
+                const titleMatch = quote.title && quote.title.toLowerCase().includes(searchTerm);
+                const categoryMatch = quote.category && quote.category.toLowerCase().includes(searchTerm);
+                
+                return englishMatch || titleMatch || categoryMatch;
+            });
+
+            currentQuoteIndex = 0;
+            updateSearchResults();
+            
+            if (filteredQuotes.length > 0) {
+                displayQuote(0);
+            } else {
+                displayNoResults();
+            }
+        }
+
+        function updateSearchResults() {
+            const existingResults = document.querySelector('.search-results');
+            if (existingResults) {
+                existingResults.remove();
+            }
+
+            if (searchActive && filteredQuotes.length > 0) {
+                const searchTerm = document.getElementById('search-input').value.trim();
+                const resultsDiv = document.createElement('div');
+                resultsDiv.className = 'search-results';
+                resultsDiv.innerHTML = `Found ${filteredQuotes.length} quotes for "${searchTerm}"`;
+                
+                const container = document.querySelector('.category-filter');
+                container.parentNode.insertBefore(resultsDiv, container.nextSibling);
+            }
+        }
+
+        function displayNoResults() {
+            const container = document.getElementById('quote-container');
+            const searchTerm = document.getElementById('search-input').value.trim();
+            
+            container.innerHTML = `
+                <div class="no-results">
+                    <h3>🔍 No quotes found for "${searchTerm}"</h3>
+                    <p>Try searching for:</p>
+                    <ul style="list-style: none; margin: 15px 0; text-align: left; max-width: 400px; margin: 15px auto;">
+                        <li>• <strong>Concepts:</strong> wisdom, dharma, spiritual, life, death</li>
+                        <li>• <strong>People:</strong> vivekananda, parents, children, guru</li>
+                        <li>• <strong>Topics:</strong> cow, worship, prayer, meditation</li>
+                        <li>• <strong>Values:</strong> truth, love, peace, joy, faith</li>
+                        <li>• <strong>Actions:</strong> practice, study, serve, respect</li>
+                    </ul>
+                    <button class="btn" onclick="clearSearch()">Show All Quotes</button>
+                </div>
+            `;
+        }
+
+        function clearSearch() {
+            document.getElementById('search-input').value = '';
+            filteredQuotes = [...quotes];
+            searchActive = false;
+            updateSearchResults();
+            displayQuote(0);
+            
+            // Reset category buttons
+            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('.category-btn').classList.add('active');
+        }
+
+        // Add Enter key support for search
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-input');
+            if (searchInput) {
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchQuotes();
+                    }
+                });
+            }
+        });
 
         function displayQuote(index) {
             const quote = filteredQuotes[index];
@@ -651,6 +753,11 @@
         }
 
         function filterQuotes(category) {
+            // Clear search when using category filter
+            document.getElementById('search-input').value = '';
+            searchActive = false;
+            updateSearchResults();
+            
             // Update active category button
             document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
